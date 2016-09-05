@@ -1,0 +1,142 @@
+/*-------
+
+   Gallery
+
+-------*/
+.gallery .gallery-item {
+    position: relative;
+    /*display: inline-block;*/
+    padding-bottom: 30px;
+}
+.gallery .gallery-item > a {
+    position: relative;
+    display: block;
+    background: #fff;
+    outline: none;
+}
+.gallery .gallery-row {
+    margin-bottom: -30px;
+}
+.gallery .gallery-item img {
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+}
+.gallery .gallery-item > a:hover img {
+    opacity: 0.9;
+}
+.gallery .gallery-item .icon {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+}
+.gallery .gallery-item > a:hover .icon {
+    opacity: 1;
+}
+
+/* remove spacing */
+.gallery .gallery-row.no-gutter {
+    margin: 0;
+}
+.gallery .gallery-row.no-gutter .gallery-item {
+    padding: 0;
+}
+
+/* container */
+.gallery .container.gallery-layout-default {
+    padding: 93px 0;
+}
+
+/* fix horizontal scrollbar */
+.gallery .gallery-layout-default,
+.gallery .gallery-layout-article {
+    overflow: hidden;
+}
+
+/* article layout */
+.gallery .gallery-layout-article > div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* lightbox */
+.gallery .modal {
+    position: fixed;
+    overflow: hidden;
+    padding-right: 0 !important;
+}
+.gallery .modal-body {
+    padding: 0;
+}
+.gallery .modal-body img {
+    width: 100%;
+}
+.gallery .modal .close {
+    position: absolute;
+    background-image: none;
+    font-size: 20px;
+    width: 54px;
+    height: 54px;
+    top: 20px;
+    right: 20px;
+    line-height: 54px;
+    opacity: 1;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    text-shadow: none;
+    z-index: 5;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+.gallery .modal .close:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* modal back color opacity */
+.modal-backdrop.in {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+@media (max-width: 768px) {
+    .gallery .modal-dialog {
+        margin: 10px auto;
+    }
+
+    .gallery .carousel-indicators,
+    .gallery .carousel-control,
+    .gallery .modal .close {
+        position: fixed;
+    }
+}
+
+/* fix fade in effect */
+.gallery .modal.fade .modal-dialog {
+    margin-top: -100px;
+    -webkit-transition: margin-top 0.3s ease-out;
+    -moz-transition: margin-top 0.3s ease-out;
+    -o-transition: margin-top 0.3s ease-out;
+    transition: margin-top 0.3s ease-out;
+}
+.gallery .modal.in .modal-dialog,
+.gallery .modal.fade .modal-dialog {
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+.gallery .modal.in .modal-dialog {
+    margin-top: 30px;
+}
